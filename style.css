@@ -133,6 +133,7 @@ header .container {
   transform: scale(1) !important;
 }
 
+
 .hamburger-menu {
   position: relative;
   z-index: 99;
@@ -228,6 +229,7 @@ header .container {
   border-radius: 50%;
   font-size: 1.1rem;
   transition: 0.3s;
+  
 }
 
 .toggle-btn i {
