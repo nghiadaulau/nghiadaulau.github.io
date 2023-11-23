@@ -22,30 +22,56 @@
 	<!-- <link rel="stylesheet" href="css/themes/white-grey.css"> -->
 	<!-- <link rel="stylesheet" href="css/themes/white-red.css"> -->
 	<!-- <link rel="stylesheet" href="css/themes/yellow-black.css"> -->
+    <style>
+        /* Add your styles here */
+        .square-card {
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: 100px; /* Điều chỉnh chiều rộng theo nhu cầu của bạn */
+        }
+
+        .square-card a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .square-card img {
+            width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ không gian bên trong thẻ */
+            height: auto; /* Đảm bảo tỷ lệ khung hình bảo toàn */
+        }
+    </style>
 </head>
 <body>
-	<main>
-		<div class="intro">Hello, I'm FlexUp!</div>
-		<div class="tagline">Multi-Platform | Multi-Service | Dedicated | Thoughtful</div>
-		<!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
-		<div class="icons-social">
-      <a target="_blank" href="https://www.facebook.com/ntqv.98">
-        <i class="fab fa-dev" aria-hidden="true" title="DEV Community"></i>
-        <span class="sr-only">Vuong</span>
-      </a>
-    <a target="_blank" href="https://www.facebook.com/nguyentheh0i">
-        <i class="fab fa-dev" aria-hidden="true" title="DEV Community"></i>
-        <span class="sr-only">Hoi</span>
-    </a>
-    <a target="_blank" href="https://www.facebook.com/profile.php?id=100032198587707">
-        <i class="fab fa-dev" aria-hidden="true" title="DEV Community"></i>
-        <span class="sr-only">Linh</span>
-    </a>
-    <a target="_blank" href="https://www.facebook.com/NghiaDauLau/">
-        <i class="fab fa-dev" aria-hidden="true" title="DEV Community"></i>
-        <span class="sr-only">Nghia</span>
-    </a>
+<main>
+    <div class="intro">Hello, I'm FlexUp!</div>
+    <div class="tagline">Multi-Platform | Multi-Service | Chip Timing Service | Dedicated | Thoughtful</div>
+    <!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
+    <div class="icons-social">
+        <div class="square-card">
+            <a target="_blank" href="https://www.facebook.com/ntqv.98">
+                <img src="vuongnguyen.jpg" alt="Vuong">
+            </a>
+        </div>
+        <div class="square-card">
+            <a target="_blank" href="https://www.facebook.com/nguyentheh0i">
+                <img src="hoinguyen.jpg" alt="Hoi">
+            </a>
+        </div>
+        <div class="square-card">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100032198587707">
+                <img src="duyhoang.jpg" alt="Linh">
+            </a>
+        </div>
+        <div class="square-card">
+            <a target="_blank" href="https://www.facebook.com/NghiaDauLau/">
+                <img src="nghiahuynh.jpg" alt="Nghia">
+            </a>
+        </div>
     </div>
-	</main>
+</main>
 </body>
 </html>
