@@ -1,0 +1,99 @@
+[
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Serverless",
+	"tags": [],
+	"description": "",
+	"content": "Xây dựng RestAPI theo mô hình Serverless Tổng quan Trong workshop này, chúng ta sẽ tìm hiểu về các khái niệm cơ bản và thực hành tạo 1 RestAPI dựa theo mô hình Serverless. Chúng ta sẽ được hướng dẫn và làm theo các dịch vụ như Route 53, API Gateway, Lambda, ECR, AWS Certificate Manager.\nNội dung Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 Quản lý session logs Port Forwarding Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.1-route53/2.1.1-createroute53/",
+	"title": "Đăng ký Domain với Route 53",
+	"tags": [],
+	"description": "",
+	"content": "Đăng ký Route 53 Truy cập giao diện console Tìm kiếm Route 53. Chọn Route53. Tại trang Route 53. Nhập domain bạn muốn đăng ký vào mục Register Domain, nhấn Check. Hoặc nhấn chọn tại Domain \u0026gt; Registered Domains. Trong trang Registered Domains nhấn chọn Register Domain. Tại trang Register Domains. Nhập domain bạn muốn đăng ký vào mục Check availability for a domain, nhấn Search để tìm kiếm. Chọn Select vào domain bạn muốn đăng ký sau đó nhấn Proceed to checkout. Tại trang Checkout. Xác nhận thông tin domain của bạn, sau đó chọn Duration chọn từ 1-10 năm. Nếu bạn muốn Auto-renew thì click chọn vào ô Auto-renew (Bạn vẫn có thể tắt tính năng này ở edit). Tiếp theo điền các thông tin liên hệ cơ bản của bạn. Cuối cùng là Review và nhấn Submit Tại trang Requests. Bạn sẽ thấy những domain mà bạn đăng ký ở dưới đây, sau khi trừ tiền thanh toán (Domain sẽ không được xài Credit) thì requests sẽ là Successful, vậy là bạn sẽ có thể sử dụng được domain trong Route 53. "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.1-route53/",
+	"title": "Đăng ký Route53 và Code",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ đăng ký một domain trên Route 53 để sử dụng cho bài Lab. Sau đó mình sẽ cung cấp một source được viết bằng Django - Python để tiến hành thực hành trong bài lab này.\nĐể tìm hiểu cách chi tiết về Route 53 thì các bạn có thể tham khảo tài liệu của AWS sau:\nAWS Route 53 Nội dung Đăng ký Domain Chuẩn bị Source Code "
+},
+{
+	"uri": "//localhost:1313/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Kiến trúc Serverless (hay không máy chủ) là một mô hình điện toán đám mây, nơi mà nhà phát triển không phải quản lý máy chủ. Thay vào đó, mọi thứ được vận hành bởi các dịch vụ quản lý tự động của nhà cung cấp đám mây (AWS), giúp giảm bớt gánh nặng về vận hành.\nVới việc sử dụng Serverless, bạn sẽ có được những ưu điểm gì?\nTự động mở rộng (Auto-scaling): Hệ thống sẽ tự động điều chỉnh tài nguyên để đáp ứng lưu lượng truy cập, bất kể lượng truy cập đó lớn hay nhỏ. Điều này giúp ứng dụng của bạn luôn hoạt động ổn định mà không cần lo lắng về việc nâng cấp hay điều chỉnh cơ sở hạ tầng. Tiết kiệm chi phí (Pay-per-use): Bạn chỉ phải trả tiền cho những tài nguyên thực sự được sử dụng, chẳng hạn như số lượng yêu cầu API hoặc thời gian thực thi của Lambda function. Điều này giúp tối ưu hóa chi phí, đặc biệt là đối với các ứng dụng có lưu lượng không đều. Giảm thiểu gánh nặng quản lý (No server management): Bạn không cần phải quản lý, duy trì hoặc cập nhật máy chủ. AWS sẽ đảm nhận toàn bộ việc này, giúp bạn tập trung hơn vào việc phát triển và cải tiến ứng dụng. Tích hợp mạnh mẽ với các dịch vụ khác: Serverless thường tích hợp tốt với nhiều dịch vụ đám mây khác, như cơ sở dữ liệu, lưu trữ, và dịch vụ AI/ML, giúp bạn xây dựng các ứng dụng toàn diện mà không cần phải kết hợp nhiều công nghệ khác nhau. Những ưu điểm này giúp Serverless trở thành một lựa chọn hấp dẫn cho việc xây dựng các ứng dụng hiện đại, đặc biệt là khi bạn cần một hệ thống linh hoạt, tiết kiệm chi phí và dễ dàng quản lý.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-lambda--api-gateway/3.1-lambda/",
+	"title": "Lambda",
+	"tags": [],
+	"description": "",
+	"content": " Tìm kiếm Lambda. Chọn Lambda. Tại trang Lambda, nhấn chọn Create Function. Tại trang Create Function Nhấn sang Tab Container Image. Nhập tên Function vào mục Function name. Tại mục Container Image URI, nhấn chọn Browse Image. Nhấn chọn Repository đã tạo lúc nãy \u0026ldquo;django-serverless-demo\u0026rdquo;. Tick chọn Image phù hợp. Nhấn Select Image để chọn Image này. Tại mục Architecture, chọn kiến trúc phù hợp với Image của bạn. Khi nãy mình build x86 nên mình sẽ chọn x86. Nhấn Create Function để khởi tạo Image. Tiếp theo chúng ta sẽ khởi tạo API Gateway để Trigger Lambda này.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-lambda--api-gateway/3.2-api-gateway/",
+	"title": "API Gateway",
+	"tags": [],
+	"description": "",
+	"content": " Tìm kiếm API Gateway. Chọn API Gateway. Tại trang API Gateway. Kéo xuống dưới phần Choose an API type. Chọn HTTP API, nhấn chọn Build. Tại Step 1: Create an API. Nhấn chọn Add integration. Nhấn chọn Lambda, chọn Region ap-southeast-1, chọn Lambda Function, chọn Version 2.0. Tại mục API name, nhập tên API name của bạn, sau đó bấm Next. Tại Step 2 Configure Routes Trong API Gateway, {proxy+} là một tham số đường dẫn đặc biệt được sử dụng khi cấu hình routes để cho phép \u0026ldquo;catch-all\u0026rdquo; hoặc \u0026ldquo;proxy\u0026rdquo; bất kỳ đường dẫn nào sau phần này của URL.\nPhần Method, tiến hành chọn GET. Phần Resource Path, tiến hành nhập /{proxy+}. Phần Integration target, nhấn chọn lambda function. Cuối cùng nhấn Next. Tại Step 3 Define Stages. Tại phần Stage Name, chọn Stage của bạn, ở đây mình chọn stage mặc định là Default, cuối cùng là nhấn Next. Tại Step 4 Review and Create. Tại phần này bạn review lại coi mình config chuẩn hết chưa. Sau khi review thì nhấn Create Sau khi khởi tạo xong API Gateway, thì ta quay về giao diện Lambda, ta sẽ thấy đã có API Gateway được trigger cho Lambda của mình. Tiếp theo ta sẽ tới phần cấu hình SSL cho API bằng ACM.\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "\rBạn cần đăng ký sẵn một domain để có thể sử dụng Amazon Route 53 trong bài thực hành này.\nĐể có thể triển khai được mô hình serverless trong bài thực hành này, chúng ta sẽ đi tìm hiểu một số service, cách khởi tạo chúng, cuối cùng mình sẽ cung cấp một source code đơn giản được viết bằng Python - Django để có thể kết nối các thành phần lại một cách hoàn chỉnh.\nNội dung Đăng ký Route53 và Code Tạo ECR, tạo Image và đẩy Image "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/",
+	"title": "Chuẩn bị source code",
+	"tags": [],
+	"description": "",
+	"content": "Chuẩn bị Source Code Source Code. Để có thể thực hành trong bài Lab này thì mình đã chuẩn bị sẵn một source code được viết bằng Django - Python. Các bạn có thể clone về để thử nghiệp serverles-django-demo. Giải thích về thư viện Mangum. Mangum là một thư viện Python được thiết kế để hỗ trợ triển khai các ứng dụng ASGI (Asynchronous Server Gateway Interface) trên AWS Lambda. Thư viện này hoạt động như một bộ chuyển đổi, cho phép các ứng dụng ASGI xử lý các sự kiện từ nhiều dịch vụ AWS khác nhau, bao gồm API Gateway, Application Load Balancer (ALB) và Lambda@Edge. Điều này rất hữu ích cho các nhà phát triển muốn tận dụng kiến trúc serverless trong khi sử dụng các framework Python hiện đại như FastAPI, Starlette và Django. Quy trình xử lý sẽ được xử lý: Nhận Sự Kiện từ API Gateway: Khi một yêu cầu HTTP được gửi tới API Gateway, nó sẽ tạo ra một sự kiện (event) chứa thông tin về yêu cầu đó, bao gồm phương thức HTTP, đường dẫn, headers, body, v.v. Sự kiện này sau đó được gửi tới Lambda function. Chuyển Đổi Sự Kiện sang ASGI: Mangum nhận sự kiện này và chuyển đổi nó thành một yêu cầu theo chuẩn ASGI. Bao gồm Headers, Body, Path, Method. Chuyển Đổi Phản Hồi (Response): Sau khi Django xử lý xong, một phản hồi (response) sẽ được tạo ra theo định dạng ASGI. Mangum sẽ nhận phản hồi này và chuyển đổi nó lại thành định dạng mà API Gateway yêu cầu, bao gồm Gửi Phản Hồi về API Gateway: Cuối cùng, phản hồi đã được chuyển đổi này sẽ được gửi lại cho API Gateway, và từ đó, API Gateway sẽ trả phản hồi này về cho client (người dùng hoặc hệ thống đã gửi yêu cầu ban đầu). Chuẩn bị Dockerfile FROM public.ecr.aws/lambda/python:3.9 ADD . \u0026#34;${LAMBDA_TASK_ROOT}\u0026#34; RUN pip3 install -r \u0026#34;${LAMBDA_TASK_ROOT}\u0026#34;/req.txt --target \u0026#34;${LAMBDA_TASK_ROOT}\u0026#34; # Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile) CMD [\u0026#34;lambda_handler._handler\u0026#34;] public.ecr.aws/lambda/python:3.9: Đây là base image được cung cấp bởi AWS, chứa môi trường runtime Python 3.9 và các công cụ cần thiết để chạy hàm Lambda trên nền tảng AWS Lambda. Trong ngữ cảnh AWS Lambda và API Gateway, handler là điểm bắt đầu cho tất cả các sự kiện được gửi đến hàm Lambda. Khi một sự kiện (chẳng hạn yêu cầu HTTP từ API Gateway) xảy ra, AWS Lambda sẽ gọi đến handler được chỉ định. Vậy nên mình sẽ chỉ định đúng handler trong Docker Image này. "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.2-ecr/",
+	"title": "Tạo ECR, tạo Image và đẩy Image",
+	"tags": [],
+	"description": "",
+	"content": "Tạo ECR, tạo Image và đẩy Image Trong bước này chúng ta sẽ tiến hành tạo ECR, sau đó sẽ tiến hành tạo ra image và đẩy lên ECR này để có thể sử dụng trong việc khởi tạo Lambda.\nTruy cập giao diện console Tìm kiếm ECR. Chọn ECR. Tại trang ECR, nhấn chọn Create. Tại trang Create Repository. Ở dòng Visibility settings:\nPrivate: Nếu bạn muốn repository của bạn là private Public: Nếu bạn muốn repository của bạn là public Ở dòng Repository name, điền tên của repository mà bạn muốn, ở đây mình sẽ điền django-serverless-demo\nỞ dòng (Optional) Image scan settings:\nĐây là tùy chọn cho phép bạn bật tính năng quét hình ảnh (image scanning) để kiểm tra các lỗ hổng bảo mật có thể có trong các image mà bạn đẩy lên repository. Nếu được bật, hệ thống sẽ tự động quét các image và đưa ra báo cáo về các lỗ hổng được phát hiện. Điều này rất hữu ích nếu bạn muốn đảm bảo an toàn cho các image trước khi sử dụng chúng trong môi trường sản xuất. Ở dòng (Optional) Encryption settings:\nĐây là tùy chọn cho phép bạn bật mã hóa cho các image được lưu trữ trong repository. Khi bật mã hóa, tất cả các image sẽ được mã hóa trước khi được lưu trữ, giúp bảo vệ dữ liệu khỏi các truy cập trái phép. Bạn có thể sử dụng khóa mã hóa do AWS quản lý hoặc tự quản lý khóa mã hóa của mình để kiểm soát bảo mật cao hơn. Ở dòng (Optional) Tag Immutability:\nĐây là tùy chọn cho phép bạn bật tính năng không thay đổi tag (tag immutability). Khi bật tính năng này, một khi một tag đã được gán cho một image, tag đó sẽ không thể được thay đổi hoặc gán lại cho một image khác. Điều này giúp đảm bảo tính toàn vẹn của các phiên bản image, tránh việc vô tình ghi đè hoặc thay đổi các image quan trọng đã được gán tag. Sau khi lựa chọn xong thì nhấn Create Repository Nhấn vào Repository vừa tạo. Nhấn chọn View push command để có thể xem cách push image lên repository Mở Terminal tại Source Code. Đầu tiên ta sẽ login vào repository của mình aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin \u0026lt;acoount-id\u0026gt;.dkr.ecr.ap-southeast-1.amazonaws.com Tiếp theo ta sẽ tiến hành build image với câu lệnh sau. Đối với các bạn xài Mac M1 nhưng muốn chạy kiến trúc x86_64 thì mình sẽ thêm \u0026ndash;platform linux/amd64. docker build --platform linux/amd64 -t django-serverless-demo -f docker/DockerfileLambda . Cuối cùng là đánh tag cho image và push lên ECR: docker tag django-serverless-demo:latest \u0026lt;acoount-id\u0026gt;.dkr.ecr.ap-southeast-1.amazonaws.com/django-serverless-demo:latest docker push \u0026lt;account-id\u0026gt;.dkr.ecr.ap-southeast-1.amazonaws.com/django-serverless-demo:latest Tiếp theo chúng ta sẽ thực hiện tạo Lambda \u0026amp; API Gateway.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-lambda--api-gateway/",
+	"title": "Lambda &amp; API Gateway",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ thực hiện tạo Lambda và một API Gateway để có thể Trigger được Lambda vừa mới tạo.\nNội dung 3.1. Tạo Lambda 3.2. Tạo API Gateway\n"
+},
+{
+	"uri": "//localhost:1313/vi/4-acm/",
+	"title": "Custom Domain &amp; SSL",
+	"tags": [],
+	"description": "",
+	"content": "Tiếp theo, chúng ta cần cấu hình domain cho API Gateway vừa rồi, chúng sẽ tiến hình tạo custom domain và cấu hình SSL cho domain đó bằng AWS Certificate Manager.\nTạo Certificate Tìm kiếm và truy cập AWS Certificate Manager trên Console Nhấn chọn Request a certificate Tại màn hình Request certificate: Nhấn chọn request a public certificate Nhấn Next Tại màn hình Request public certificate: Nhập domain name vào phần Fully qualified domain name Tại mục Validation method, chọn DNS validation Tại phần Key Algorithm, chọn RSA 2048 Nhấn Next để hoàn thiện Tại màn hình chi tiết của Certificate: Nhấn chọn Create Records in Route 53 Sau khi vào màn hình create records thì nhấn Create Records để khởi tạo. Tiếp theo bạn sẽ đợi một khoản thời gian để cho verify xanh lên là đã khởi tạo thành công. Tạo Custom Domain Tại màn hình API Gateway, ta chọn phần Custom Domain Names: Nhấn chọn Create Tại màn hình Create domain name: Điền tên domain vào phần domain name Chọn API endpoint type: Regional Tại mục ACM certificate, nhấn chọn ACM đã được thiết lập. Nhấn Create Domain Name Ở phần API Gateway Domain Name, đây sẽ là domain bạn sẽ cấu hình vào Route 53 bằng để có thể mapping domain của mình. Tại màn hình Custom domain names: Chọn domain vừa tạo Chọn tab API Mappings Nhấn chọn Configure API Mappings Tiến hành chọn API Tại mục API Chọn stage muốn mappings, ở đây mình sẽ chọn default Nhấn Save Mappings Domain Name Tìm kiếm và truy cập AWS Route 53 Hosted Zones trên thanh điều hướng. Nhấn chọn Hosted Zone của Domain của bạn. Tại màn hình hosted zone của domain bạn: Nhấn chọn Create Record Tại màn hình Create Record: Nhập subdomain của bạn vào phần record name Chọn Record Type là CNAME Nhập API Gateway Domain Name vào phần Value Nhấn Create Records Vậy là xong, ta sẽ kiểm tra mọi thứ có hoạt động hay không bằng cURL.\nCó vẻ là đã hoàn thiện, vậy là đã xong các bước thiết lập.\n"
+},
+{
+	"uri": "//localhost:1313/vi/5-cleanup/",
+	"title": "Dọn dẹp tài nguyên  ",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.\nXóa Lambda Function Truy cập giao diện quản trị dịch vụ Lambda Click Functions. Click chọn Functions của bạn. Click Actions, chọn Delete. Nhập delete vào pop-up và nhấn Delete. Truy cập giao diện quản trị dịch vụ ECR Click Repositories. Click chọn Delete. Nhập delete vào pop-up và nhấn Delete. Truy cập giao diện quản trị dịch vụ API Gateway. Click chọn Custom Domain Names. Click chọn domain, nhấn tab API Mappings, chọn Configure API mappings. Nhấn Remove các Mapping. Click chọn APIs Click chọn API của bạn. Click chọn Delete. Nhập confirm vào pop-up và nhấn Delete. "
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

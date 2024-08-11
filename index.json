@@ -1,0 +1,99 @@
+[
+{
+	"uri": "//localhost:1313/",
+	"title": "Serverless",
+	"tags": [],
+	"description": "",
+	"content": "Xây dựng RestAPI theo mô hình Serverless Overall In this workshop, we will learn about the basic concepts and practice creating a RestAPI based on the Serverless model. We will be guided and follow services such as Route 53, API Gateway, Lambda, ECR, AWS Certificate Manager.\nContent Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
+},
+{
+	"uri": "//localhost:1313/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Serverless Architecture (or No-Server Architecture) is a cloud computing model where developers do not have to manage servers. Instead, everything is operated by automated management services provided by the cloud provider, reducing the operational burden.\nWhat are the advantages of using Serverless?\nAuto-scaling: The system will automatically adjust resources to meet traffic demands, regardless of whether the traffic is large or small. This ensures that your application always operates stably without worrying about upgrading or adjusting the infrastructure. Pay-per-use: You only pay for the resources that are actually used, such as the number of API requests or the execution time of a Lambda function. This helps optimize costs, especially for applications with uneven traffic. No server management: You don\u0026rsquo;t need to manage, maintain, or update servers. AWS will handle all of this, allowing you to focus more on developing and improving the application. Strong integration with other services: Serverless often integrates well with many other cloud services, such as databases, storage, and AI/ML services, helping you build comprehensive applications without needing to combine multiple different technologies. These advantages make Serverless an attractive choice for building modern applications, especially when you need a flexible, cost-effective, and easy-to-manage system.\n"
+},
+{
+	"uri": "//localhost:1313/3-lambda--api-gateway/3.1-lambda/",
+	"title": "Lambda",
+	"tags": [],
+	"description": "",
+	"content": " Search for Lambda. Select Lambda. On the Lambda page, click Create Function. On the Create Function page: Switch to the Container Image tab. Enter the function name in the Function name field. In the Container Image URI section, click Browse Image. Select the repository created earlier, \u0026ldquo;django-serverless-demo.\u0026rdquo; Tick the appropriate image. Click Select Image to choose this image. In the Architecture section, select the architecture that matches your image. Since we built x86, I will select x86. Click Create Function to create the image. Next, we will create an API Gateway to trigger this Lambda.\n"
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.1-route53/",
+	"title": "Register Route53 and Code",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will need to create a VPC with 2 public / private subnets. Then create 1 EC2 Instance Linux located in the public subnet, 1 EC2 Instance Windows located in the private subnet.\nThe architecture overview after you complete this step will be as follows:\nTo learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:\nAbout Amazon EC2 Works with Amazon VPC Content Register Domain Preparing the Source Code "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.1-route53/2.1.1-createroute53/",
+	"title": "Registering a Domain with Route 53",
+	"tags": [],
+	"description": "",
+	"content": "Registering with Route 53 Access the AWS console. Search for Route 53. Select Route 53. On the Route 53 page: Enter the domain you want to register in the Register Domain field and click Check. Alternatively, select Domains \u0026gt; Registered Domains. On the Registered Domains page, click on Register Domain. On the Register Domains page: Enter the domain you want to register in the Check availability for a domain field and click Search. Select the domain you want to register, then click Proceed to checkout. On the Checkout page: Confirm your domain information, then choose the Duration from 1 to 10 years. If you want Auto-renew, click the Auto-renew box (you can disable this feature later in the edit section). Next, fill in your basic contact information. Finally, Review and click Submit. On the Requests page:\nYou will see the domains you have registered below. After the payment is processed (Domain registration cannot use credits), the requests will show as Successful, and you will be able to use the domain in Route 53. "
+},
+{
+	"uri": "//localhost:1313/3-lambda--api-gateway/3.2-api-gateway/",
+	"title": "API Gateway",
+	"tags": [],
+	"description": "",
+	"content": " Search for API Gateway. Select API Gateway. On the API Gateway page: Scroll down to the Choose an API type section. Select HTTP API and click Build. At Step 1: Create an API: Click Add integration. Select Lambda, choose the Region ap-southeast-1, select your Lambda Function, and choose Version 2.0. In the API name field, enter your API name, then click Next. At Step 2: Configure Routes: In API Gateway, {proxy+} is a special path parameter used when configuring routes to enable \u0026ldquo;catch-all\u0026rdquo; or \u0026ldquo;proxy\u0026rdquo; for any path after this part of the URL.\nIn the Method section, select GET. In the Resource Path section, enter /{proxy+}. In the Integration target section, select the Lambda function. Finally, click Next. At Step 3: Define Stages: In the Stage Name section, select your Stage. In this case, choose the default stage Default, and then click Next. At Step 4: Review and Create: Review your configurations to ensure everything is correct. After reviewing, click Create. After creating the API Gateway, go back to the Lambda interface. You will see that the API Gateway has been triggered for your Lambda function. Next, we will proceed to configure SSL for the API using ACM.\n"
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.2-ecr/",
+	"title": "Create IAM Role",
+	"tags": [],
+	"description": "",
+	"content": "Create IAM Role In this step, we will proceed to create IAM Role. In this IAM Role, the policy AmazonSSMManagedInstanceCore will be assigned, this is the policy that allows the EC2 server to communicate with the Session Manager.\nGo to IAM service administration interface In the left navigation bar, click Roles. Click Create role. Click AWS service and click EC2. Click Next: Permissions. In the Search box, enter AmazonSSMManagedInstanceCore and press Enter to search for this policy. Click the policy AmazonSSMManagedInstanceCore. Click Next: Tags. Click Next: Review. Name the Role SSM-Role in Role Name Click Create Role . Next, we will make the connection to the EC2 servers we created with Session Manager.\n"
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/",
+	"title": "Preparation ",
+	"tags": [],
+	"description": "",
+	"content": "\rYou need to register a domain in order to use Amazon Route 53 in this tutorial.\nTo be able to deploy the serverless model in this exercise, we will learn about some services, how to initialize them, and finally I will provide a simple source code written in Python - Django to be able to connect the components completely.\nContent Register Route53 and Code Create ECR, build Image and push Image "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/",
+	"title": "Prepare the Source Code",
+	"tags": [],
+	"description": "",
+	"content": "Prepare the Source Code Source Code.\nTo practice in this Lab, I\u0026rsquo;ve prepared a source code written in Django - Python. You can clone it to experiment with serverles-django-demo. Explanation of the Mangum library.\nMangum is a Python library designed to support deploying ASGI (Asynchronous Server Gateway Interface) applications on AWS Lambda. This library acts as a converter, allowing ASGI applications to handle events from various AWS services, including API Gateway, Application Load Balancer (ALB), and Lambda@Edge. This is very useful for developers who want to leverage serverless architecture while using modern Python frameworks like FastAPI, Starlette, and Django. The process works as follows:\nReceiving an Event from API Gateway: When an HTTP request is sent to API Gateway, it generates an event containing information about the request, including the HTTP method, path, headers, body, etc. This event is then sent to the Lambda function. Converting the Event to ASGI: Mangum receives this event and converts it into an ASGI-compliant request, including Headers, Body, Path, and Method. Converting the Response: After Django processes the request, a response will be generated in the ASGI format. Mangum receives this response and converts it back into the format required by API Gateway, including Headers, Body, Status Code. Sending the Response back to API Gateway: Finally, the converted response is sent back to API Gateway, which then returns it to the client (the user or system that made the initial request). Preparing the Dockerfile\nFROM public.ecr.aws/lambda/python:3.9 ADD . \u0026#34;${LAMBDA_TASK_ROOT}\u0026#34; RUN pip3 install -r \u0026#34;${LAMBDA_TASK_ROOT}\u0026#34;/req.txt --target \u0026#34;${LAMBDA_TASK_ROOT}\u0026#34; # Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile) CMD [\u0026#34;lambda_handler._handler\u0026#34;] public.ecr.aws/lambda/python:3.9: This is the base image provided by AWS, containing the Python 3.9 runtime environment and the necessary tools to run a Lambda function on the AWS Lambda platform. In the context of AWS Lambda and API Gateway, the handler is the entry point for all events sent to the Lambda function. When an event (such as an HTTP request from API Gateway) occurs, AWS Lambda invokes the specified handler. Therefore, we need to specify the correct handler in this Docker Image. "
+},
+{
+	"uri": "//localhost:1313/3-lambda--api-gateway/",
+	"title": "Lambda &amp; API Gateway",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will create a Lambda and an API Gateway to be able to Trigger the newly created Lambda.\nContent 3.1. Create Lambda 3.2. Create API Gateway\n"
+},
+{
+	"uri": "//localhost:1313/4-acm/",
+	"title": "Custom Domain &amp; SSL",
+	"tags": [],
+	"description": "",
+	"content": "Next, we need to configure the domain for the API Gateway we just created. We\u0026rsquo;ll proceed to create a custom domain and configure SSL for that domain using AWS Certificate Manager.\nCreate a Certificate Search for and access AWS Certificate Manager on the Console. Click Request a certificate. On the Request certificate screen: Select request a public certificate. Click Next. On the Request public certificate screen: Enter the domain name in the Fully qualified domain name field. In the Validation method section, select DNS validation. In the Key Algorithm section, choose RSA 2048. Click Next to complete the setup. On the Certificate detail screen: Click Create Records in Route 53. Once on the create records screen, click Create Records to initiate. Then, wait for the verification to turn green, indicating successful creation. Create a Custom Domain On the API Gateway screen, select Custom Domain Names: Click Create. On the Create domain name screen: Enter your domain name in the domain name field. Select the API endpoint type: Regional. In the ACM certificate section, choose the ACM you set up earlier. Click Create Domain Name. In the API Gateway Domain Name section, this will be the domain you configure in Route 53 to map your custom domain. On the Custom domain names screen: Select the domain you just created. Go to the API Mappings tab. Click Configure API Mappings. Select the API in the API field. Choose the stage you want to map, in this case, I\u0026rsquo;ll select the default stage. Click Save. Map Domain Name Search for and access AWS Route 53. Go to Hosted Zones in the navigation bar. Select the Hosted Zone of your domain. On your domain\u0026rsquo;s hosted zone screen: Click Create Record. On the Create Record screen: Enter your subdomain in the record name field. Choose CNAME as the Record Type. Enter the API Gateway Domain Name in the Value field. Click Create Records. That\u0026rsquo;s it! Now, we can test if everything is working using cURL.\nIt seems everything is set up correctly. The setup is now complete.\n"
+},
+{
+	"uri": "//localhost:1313/5-cleanup/",
+	"title": "Cleaning Up Resources",
+	"tags": [],
+	"description": "",
+	"content": "We will follow the steps below to delete the resources we created in this practice session.\nDelete Lambda Function Access the Lambda service management interface. Click Functions. Click to select your Function. Click Actions and choose Delete. Enter \u0026ldquo;delete\u0026rdquo; in the pop-up and click Delete. Access the ECR service management interface. Click Repositories. Click to select Delete. Enter \u0026ldquo;delete\u0026rdquo; in the pop-up and click Delete. Access the API Gateway service management interface. Click Custom Domain Names. Click to select the domain, go to the API Mappings tab, and select Configure API mappings. Remove the mappings. Click APIs. Click to select your API. Click Delete. Enter \u0026ldquo;confirm\u0026rdquo; in the pop-up and click Delete. "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
