@@ -22,10 +22,10 @@
 },
 {
 	"uri": "https://nghiadaulau.github.io/2-prerequiste/2.1-route53/",
-	"title": "Register Route53 and Code",
+	"title": "Register Route 53 and Code",
 	"tags": [],
 	"description": "",
-	"content": "In this step, we will need to create a VPC with 2 public / private subnets. Then create 1 EC2 Instance Linux located in the public subnet, 1 EC2 Instance Windows located in the private subnet.\nThe architecture overview after you complete this step will be as follows:\nTo learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:\nAbout Amazon EC2 Works with Amazon VPC Content Register Domain Preparing the Source Code "
+	"content": "In this step, we will register a domain on Route 53 to use for the Lab. After that, I will provide a source code written in Django - Python for practice in this lab.\nTo learn more details about Route 53, you can refer to the AWS documentation below:\nAWS Route 53 Content Domain Registration Prepare Source Code "
 },
 {
 	"uri": "https://nghiadaulau.github.io/2-prerequiste/2.1-route53/2.1.1-createroute53/",
