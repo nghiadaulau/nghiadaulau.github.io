@@ -2,174 +2,174 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/</loc>
+    <loc>https://nghiadaulau.github.io/vi/</loc>
     <lastmod>1970-01-01T08:33:41+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="https://nghiadaulau.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="https://nghiadaulau.github.io/vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.1-route53/2.1.1-createroute53/</loc>
+    <loc>https://nghiadaulau.github.io/vi/2-prerequiste/2.1-route53/2.1.1-createroute53/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.1-route53/2.1.1-createroute53/"
+                href="https://nghiadaulau.github.io/2-prerequiste/2.1-route53/2.1.1-createroute53/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.1-route53/2.1.1-createroute53/"
+                href="https://nghiadaulau.github.io/vi/2-prerequiste/2.1-route53/2.1.1-createroute53/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.1-route53/</loc>
+    <loc>https://nghiadaulau.github.io/vi/2-prerequiste/2.1-route53/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.1-route53/"
+                href="https://nghiadaulau.github.io/2-prerequiste/2.1-route53/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.1-route53/"
+                href="https://nghiadaulau.github.io/vi/2-prerequiste/2.1-route53/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/1-introduce/</loc>
+    <loc>https://nghiadaulau.github.io/vi/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/1-introduce/"
+                href="https://nghiadaulau.github.io/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/1-introduce/"
+                href="https://nghiadaulau.github.io/vi/1-introduce/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda--api-gateway/3.1-lambda/</loc>
+    <loc>https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.1-lambda/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda--api-gateway/3.1-lambda/"
+                href="https://nghiadaulau.github.io/3-lambda--api-gateway/3.1-lambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda--api-gateway/3.1-lambda/"
+                href="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.1-lambda/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda--api-gateway/3.2-api-gateway/</loc>
+    <loc>https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.2-api-gateway/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda--api-gateway/3.2-api-gateway/"
+                href="https://nghiadaulau.github.io/3-lambda--api-gateway/3.2-api-gateway/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda--api-gateway/3.2-api-gateway/"
+                href="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.2-api-gateway/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/</loc>
+    <loc>https://nghiadaulau.github.io/vi/2-prerequiste/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/"
+                href="https://nghiadaulau.github.io/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/"
+                href="https://nghiadaulau.github.io/vi/2-prerequiste/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/</loc>
+    <loc>https://nghiadaulau.github.io/vi/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/"
+                href="https://nghiadaulau.github.io/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/"
+                href="https://nghiadaulau.github.io/vi/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.2-ecr/</loc>
+    <loc>https://nghiadaulau.github.io/vi/2-prerequiste/2.2-ecr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.2-ecr/"
+                href="https://nghiadaulau.github.io/2-prerequiste/2.2-ecr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.2-ecr/"
+                href="https://nghiadaulau.github.io/vi/2-prerequiste/2.2-ecr/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda--api-gateway/</loc>
+    <loc>https://nghiadaulau.github.io/vi/3-lambda--api-gateway/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda--api-gateway/"
+                href="https://nghiadaulau.github.io/3-lambda--api-gateway/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda--api-gateway/"
+                href="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-acm/</loc>
+    <loc>https://nghiadaulau.github.io/vi/4-acm/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-acm/"
+                href="https://nghiadaulau.github.io/4-acm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-acm/"
+                href="https://nghiadaulau.github.io/vi/4-acm/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-cleanup/</loc>
+    <loc>https://nghiadaulau.github.io/vi/5-cleanup/</loc>
     <lastmod>1970-01-01T08:33:41+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-cleanup/"
+                href="https://nghiadaulau.github.io/5-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-cleanup/"
+                href="https://nghiadaulau.github.io/vi/5-cleanup/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/categories/</loc>
+    <loc>https://nghiadaulau.github.io/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="https://nghiadaulau.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/categories/"
+                href="https://nghiadaulau.github.io/vi/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/tags/</loc>
+    <loc>https://nghiadaulau.github.io/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="https://nghiadaulau.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="https://nghiadaulau.github.io/vi/tags/"
                 />
   </url>
 </urlset>
