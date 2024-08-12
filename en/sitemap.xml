@@ -27,16 +27,16 @@
                 href="https://nghiadaulau.github.io/1-introduce/"
                 />
   </url><url>
-    <loc>https://nghiadaulau.github.io/3-lambda--api-gateway/3.1-lambda/</loc>
+    <loc>https://nghiadaulau.github.io/3-lambdaapigateway/3.1-lambda/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.1-lambda/"
+                href="https://nghiadaulau.github.io/vi/3-lambdaapigateway/3.1-lambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nghiadaulau.github.io/3-lambda--api-gateway/3.1-lambda/"
+                href="https://nghiadaulau.github.io/3-lambdaapigateway/3.1-lambda/"
                 />
   </url><url>
     <loc>https://nghiadaulau.github.io/2-prerequiste/2.1-route53/</loc>
@@ -63,16 +63,16 @@
                 href="https://nghiadaulau.github.io/2-prerequiste/2.1-route53/2.1.1-createroute53/"
                 />
   </url><url>
-    <loc>https://nghiadaulau.github.io/3-lambda--api-gateway/3.2-api-gateway/</loc>
+    <loc>https://nghiadaulau.github.io/3-lambdaapigateway/3.2-api-gateway/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.2-api-gateway/"
+                href="https://nghiadaulau.github.io/vi/3-lambdaapigateway/3.2-api-gateway/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nghiadaulau.github.io/3-lambda--api-gateway/3.2-api-gateway/"
+                href="https://nghiadaulau.github.io/3-lambdaapigateway/3.2-api-gateway/"
                 />
   </url><url>
     <loc>https://nghiadaulau.github.io/2-prerequiste/2.2-ecr/</loc>
@@ -111,16 +111,16 @@
                 href="https://nghiadaulau.github.io/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/"
                 />
   </url><url>
-    <loc>https://nghiadaulau.github.io/3-lambda--api-gateway/</loc>
+    <loc>https://nghiadaulau.github.io/3-lambdaapigateway/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/"
+                href="https://nghiadaulau.github.io/vi/3-lambdaapigateway/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nghiadaulau.github.io/3-lambda--api-gateway/"
+                href="https://nghiadaulau.github.io/3-lambdaapigateway/"
                 />
   </url><url>
     <loc>https://nghiadaulau.github.io/4-acm/</loc>

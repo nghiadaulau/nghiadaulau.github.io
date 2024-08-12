@@ -4,7 +4,7 @@
 	"title": "Serverless",
 	"tags": [],
 	"description": "",
-	"content": "Xây dựng RestAPI theo mô hình Serverless Tổng quan Trong workshop này, chúng ta sẽ tìm hiểu về các khái niệm cơ bản và thực hành tạo 1 RestAPI dựa theo mô hình Serverless. Chúng ta sẽ được hướng dẫn và làm theo các dịch vụ như Route 53, API Gateway, Lambda, ECR, AWS Certificate Manager.\nNội dung Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 Quản lý session logs Port Forwarding Dọn dẹp tài nguyên "
+	"content": "Xây dựng RestAPI theo mô hình Serverless Tổng quan Trong workshop này, chúng ta sẽ tìm hiểu về các khái niệm cơ bản và thực hành tạo 1 RestAPI dựa theo mô hình Serverless. Chúng ta sẽ được hướng dẫn và làm theo các dịch vụ như Route 53, API Gateway, Lambda, ECR, AWS Certificate Manager.\nNội dung Giới thiệu Các bước chuẩn bị Lambda \u0026amp; API Gateway Custom Domain \u0026amp; SSL Dọn dẹp tài nguyên "
 },
 {
 	"uri": "https://nghiadaulau.github.io/vi/2-prerequiste/2.1-route53/2.1.1-createroute53/",
@@ -28,14 +28,14 @@
 	"content": "Kiến trúc Serverless (hay không máy chủ) là một mô hình điện toán đám mây, nơi mà nhà phát triển không phải quản lý máy chủ. Thay vào đó, mọi thứ được vận hành bởi các dịch vụ quản lý tự động của nhà cung cấp đám mây (AWS), giúp giảm bớt gánh nặng về vận hành.\nVới việc sử dụng Serverless, bạn sẽ có được những ưu điểm gì?\nTự động mở rộng (Auto-scaling): Hệ thống sẽ tự động điều chỉnh tài nguyên để đáp ứng lưu lượng truy cập, bất kể lượng truy cập đó lớn hay nhỏ. Điều này giúp ứng dụng của bạn luôn hoạt động ổn định mà không cần lo lắng về việc nâng cấp hay điều chỉnh cơ sở hạ tầng. Tiết kiệm chi phí (Pay-per-use): Bạn chỉ phải trả tiền cho những tài nguyên thực sự được sử dụng, chẳng hạn như số lượng yêu cầu API hoặc thời gian thực thi của Lambda function. Điều này giúp tối ưu hóa chi phí, đặc biệt là đối với các ứng dụng có lưu lượng không đều. Giảm thiểu gánh nặng quản lý (No server management): Bạn không cần phải quản lý, duy trì hoặc cập nhật máy chủ. AWS sẽ đảm nhận toàn bộ việc này, giúp bạn tập trung hơn vào việc phát triển và cải tiến ứng dụng. Tích hợp mạnh mẽ với các dịch vụ khác: Serverless thường tích hợp tốt với nhiều dịch vụ đám mây khác, như cơ sở dữ liệu, lưu trữ, và dịch vụ AI/ML, giúp bạn xây dựng các ứng dụng toàn diện mà không cần phải kết hợp nhiều công nghệ khác nhau. Những ưu điểm này giúp Serverless trở thành một lựa chọn hấp dẫn cho việc xây dựng các ứng dụng hiện đại, đặc biệt là khi bạn cần một hệ thống linh hoạt, tiết kiệm chi phí và dễ dàng quản lý.\n"
 },
 {
-	"uri": "https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.1-lambda/",
+	"uri": "https://nghiadaulau.github.io/vi/3-lambdaapigateway/3.1-lambda/",
 	"title": "Lambda",
 	"tags": [],
 	"description": "",
 	"content": " Tìm kiếm Lambda. Chọn Lambda. Tại trang Lambda, nhấn chọn Create Function. Tại trang Create Function Nhấn sang Tab Container Image. Nhập tên Function vào mục Function name. Tại mục Container Image URI, nhấn chọn Browse Image. Nhấn chọn Repository đã tạo lúc nãy \u0026ldquo;django-serverless-demo\u0026rdquo;. Tick chọn Image phù hợp. Nhấn Select Image để chọn Image này. Tại mục Architecture, chọn kiến trúc phù hợp với Image của bạn. Khi nãy mình build x86 nên mình sẽ chọn x86. Nhấn Create Function để khởi tạo Image. Tiếp theo chúng ta sẽ khởi tạo API Gateway để Trigger Lambda này.\n"
 },
 {
-	"uri": "https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.2-api-gateway/",
+	"uri": "https://nghiadaulau.github.io/vi/3-lambdaapigateway/3.2-api-gateway/",
 	"title": "API Gateway",
 	"tags": [],
 	"description": "",
@@ -63,7 +63,7 @@
 	"content": "Tạo ECR, tạo Image và đẩy Image Trong bước này chúng ta sẽ tiến hành tạo ECR, sau đó sẽ tiến hành tạo ra image và đẩy lên ECR này để có thể sử dụng trong việc khởi tạo Lambda.\nTruy cập giao diện console Tìm kiếm ECR. Chọn ECR. Tại trang ECR, nhấn chọn Create. Tại trang Create Repository. Ở dòng Visibility settings:\nPrivate: Nếu bạn muốn repository của bạn là private Public: Nếu bạn muốn repository của bạn là public Ở dòng Repository name, điền tên của repository mà bạn muốn, ở đây mình sẽ điền django-serverless-demo\nỞ dòng (Optional) Image scan settings:\nĐây là tùy chọn cho phép bạn bật tính năng quét hình ảnh (image scanning) để kiểm tra các lỗ hổng bảo mật có thể có trong các image mà bạn đẩy lên repository. Nếu được bật, hệ thống sẽ tự động quét các image và đưa ra báo cáo về các lỗ hổng được phát hiện. Điều này rất hữu ích nếu bạn muốn đảm bảo an toàn cho các image trước khi sử dụng chúng trong môi trường sản xuất. Ở dòng (Optional) Encryption settings:\nĐây là tùy chọn cho phép bạn bật mã hóa cho các image được lưu trữ trong repository. Khi bật mã hóa, tất cả các image sẽ được mã hóa trước khi được lưu trữ, giúp bảo vệ dữ liệu khỏi các truy cập trái phép. Bạn có thể sử dụng khóa mã hóa do AWS quản lý hoặc tự quản lý khóa mã hóa của mình để kiểm soát bảo mật cao hơn. Ở dòng (Optional) Tag Immutability:\nĐây là tùy chọn cho phép bạn bật tính năng không thay đổi tag (tag immutability). Khi bật tính năng này, một khi một tag đã được gán cho một image, tag đó sẽ không thể được thay đổi hoặc gán lại cho một image khác. Điều này giúp đảm bảo tính toàn vẹn của các phiên bản image, tránh việc vô tình ghi đè hoặc thay đổi các image quan trọng đã được gán tag. Sau khi lựa chọn xong thì nhấn Create Repository Nhấn vào Repository vừa tạo. Nhấn chọn View push command để có thể xem cách push image lên repository Mở Terminal tại Source Code. Đầu tiên ta sẽ login vào repository của mình aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin \u0026lt;acoount-id\u0026gt;.dkr.ecr.ap-southeast-1.amazonaws.com Tiếp theo ta sẽ tiến hành build image với câu lệnh sau. Đối với các bạn xài Mac M1 nhưng muốn chạy kiến trúc x86_64 thì mình sẽ thêm \u0026ndash;platform linux/amd64. docker build --platform linux/amd64 -t django-serverless-demo -f docker/DockerfileLambda . Cuối cùng là đánh tag cho image và push lên ECR: docker tag django-serverless-demo:latest \u0026lt;acoount-id\u0026gt;.dkr.ecr.ap-southeast-1.amazonaws.com/django-serverless-demo:latest docker push \u0026lt;account-id\u0026gt;.dkr.ecr.ap-southeast-1.amazonaws.com/django-serverless-demo:latest Tiếp theo chúng ta sẽ thực hiện tạo Lambda \u0026amp; API Gateway.\n"
 },
 {
-	"uri": "https://nghiadaulau.github.io/vi/3-lambda--api-gateway/",
+	"uri": "https://nghiadaulau.github.io/vi/3-lambdaapigateway/",
 	"title": "Lambda &amp; API Gateway",
 	"tags": [],
 	"description": "",

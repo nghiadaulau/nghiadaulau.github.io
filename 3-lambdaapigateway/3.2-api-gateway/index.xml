@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API Gateway on Building Serverless RestAPI</title>
-    <link>https://nghiadaulau.github.io/3-lambda--api-gateway/3.2-api-gateway/</link>
+    <link>https://nghiadaulau.github.io/3-lambdaapigateway/3.2-api-gateway/</link>
     <description>Recent content in API Gateway on Building Serverless RestAPI</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://nghiadaulau.github.io/3-lambda--api-gateway/3.2-api-gateway/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nghiadaulau.github.io/3-lambdaapigateway/3.2-api-gateway/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

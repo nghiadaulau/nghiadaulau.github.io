@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Create IAM Role :: Building Serverless RestAPI</title>
+    <title>Create ECR, Build Image, and Push Image :: Building Serverless RestAPI</title>
 
     
-    <link href="/css/nucleus.css?1723452425" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1723452425" rel="stylesheet">
-    <link href="/css/hybrid.css?1723452425" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1723452425" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1723452425" rel="stylesheet">
-    <link href="/css/auto-complete.css?1723452425" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1723452425" rel="stylesheet">
-    <link href="/css/theme.css?1723452425" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1723452425" rel="stylesheet">
+    <link href="/css/nucleus.css?1723453848" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1723453848" rel="stylesheet">
+    <link href="/css/hybrid.css?1723453848" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1723453848" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1723453848" rel="stylesheet">
+    <link href="/css/auto-complete.css?1723453848" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1723453848" rel="stylesheet">
+    <link href="/css/theme.css?1723453848" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1723453848" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1723452425" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1723453848" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1723452425"></script>
+    <script src="/js/jquery-3.3.1.min.js?1723453848"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1723452425"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1723452425"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1723453848"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1723453848"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/nghiadaulau.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1723452425"></script>
+<script type="text/javascript" src="/js/search.js?1723453848"></script>
 
     
   </div>
@@ -235,13 +235,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-ecr/" title="Create IAM Role" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-ecr/" title="Create ECR, Build Image, and Push Image" class="dd-item 
         
         active
         
         ">
       <a href="/2-prerequiste/2.2-ecr/">
-           <b> 2.2 </b> Create IAM Role
+           <b> 2.2 </b> Create ECR, Build Image, and Push Image
           
             <i class="fas fa-check read-icon"></i>
           
@@ -270,12 +270,12 @@
  
   
     
-    <li data-nav-id="/3-lambda--api-gateway/" title="Lambda &amp; API Gateway" class="dd-item 
+    <li data-nav-id="/3-lambdaapigateway/" title="Lambda &amp; API Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/3-lambda--api-gateway/">
+      <a href="/3-lambdaapigateway/">
            <b> 3. </b> Lambda &amp; API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -301,12 +301,12 @@
  
   
     
-    <li data-nav-id="/3-lambda--api-gateway/3.1-lambda/" title="Lambda" class="dd-item 
+    <li data-nav-id="/3-lambdaapigateway/3.1-lambda/" title="Lambda" class="dd-item 
         
         
         
         ">
-      <a href="/3-lambda--api-gateway/3.1-lambda/">
+      <a href="/3-lambdaapigateway/3.1-lambda/">
            <b> 3.1. </b> Lambda
           
             <i class="fas fa-check read-icon"></i>
@@ -329,12 +329,12 @@
  
   
     
-    <li data-nav-id="/3-lambda--api-gateway/3.2-api-gateway/" title="API Gateway" class="dd-item 
+    <li data-nav-id="/3-lambdaapigateway/3.2-api-gateway/" title="API Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/3-lambda--api-gateway/3.2-api-gateway/">
+      <a href="/3-lambdaapigateway/3.2-api-gateway/">
            <b> 3.2. </b> API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -549,7 +549,7 @@
             
           
           
-            <a href='/'>Serverless</a> > <a href='/2-prerequiste/'>Preparation </a> > Create IAM Role
+            <a href='/'>Serverless</a> > <a href='/2-prerequiste/'>Preparation </a> > Create ECR, Build Image, and Push Image
           
         
           
@@ -566,7 +566,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#create-iam-role">Create IAM Role</a></li>
+        <li><a href="#create-ecr-build-image-and-push-image">Create ECR, Build Image, and Push Image</a></li>
       </ul>
     </li>
   </ul>
@@ -586,7 +586,7 @@
           
             <h1>
               
-              Create IAM Role
+              Create ECR, Build Image, and Push Image
             </h1>
           
 
@@ -594,41 +594,88 @@
 
 
 
-	<h3 id="create-iam-role">Create IAM Role</h3>
-<p>In this step, we will proceed to create IAM Role. In this IAM Role, the policy <strong>AmazonSSMManagedInstanceCore</strong> will be assigned, this is the policy that allows the EC2 server to communicate with the Session Manager.</p>
+	<h3 id="create-ecr-build-image-and-push-image">Create ECR, Build Image, and Push Image</h3>
+<p>In this step, we will create an ECR, build an image, and push it to the ECR for use in Lambda creation.</p>
 <ol>
-<li>Go to <a href="https://console.aws.amazon.com/iamv2/">IAM service administration interface</a></li>
-<li>In the left navigation bar, click <strong>Roles</strong>.</li>
+<li>Access the <a href="https://ap-southeast-1.console.aws.amazon.com">AWS console</a>
+<ul>
+<li>Search for <strong>ECR</strong>.</li>
+<li>Select ECR.</li>
+</ul>
+</li>
 </ol>
-<p><img alt="role" src="/images/2.prerequisite/038-iamrole.png"></p>
+<p><img alt="ECR" src="/images/2.prerequisite/ecr-001.png"></p>
+<ol start="2">
+<li>On the <strong>ECR</strong> page, click <strong>Create</strong>.</li>
+</ol>
+<p><img alt="ECR" src="/images/2.prerequisite/ecr-002.png"></p>
 <ol start="3">
-<li>Click <strong>Create role</strong>.</li>
+<li>On the <strong>Create Repository</strong> page:
+<ul>
+<li>
+<p>In the <strong>Visibility settings</strong>:</p>
+<ul>
+<li>Private: If you want your repository to be private.</li>
+<li>Public: If you want your repository to be public.</li>
+</ul>
+</li>
+<li>
+<p>In the <strong>Repository name</strong> field, enter the name of the repository you want; here, we&rsquo;ll enter <code>django-serverless-demo</code>.</p>
+</li>
+<li>
+<p>In the <strong>(Optional) Image scan settings</strong>:</p>
+<ul>
+<li>This option allows you to enable image scanning to check for potential security vulnerabilities in the images you push to the repository. If enabled, the system will automatically scan the images and provide a report on any detected vulnerabilities. This is very useful if you want to ensure the safety of the images before using them in production.</li>
+</ul>
+</li>
+<li>
+<p>In the <strong>(Optional) Encryption settings</strong>:</p>
+<ul>
+<li>This option allows you to enable encryption for the images stored in the repository. When encryption is enabled, all images will be encrypted before being stored, protecting data from unauthorized access. You can use AWS-managed encryption keys or manage your encryption keys for higher security control.</li>
+</ul>
+</li>
+<li>
+<p>In the <strong>(Optional) Tag Immutability</strong>:</p>
+<ul>
+<li>This option allows you to enable tag immutability. When this feature is enabled, once a tag is assigned to an image, it cannot be changed or reassigned to another image. This ensures the integrity of image versions, avoiding accidental overwriting or changes to important tagged images.</li>
+</ul>
+</li>
+<li>
+<p>After making your selections, click <strong>Create Repository</strong>.</p>
+</li>
+</ul>
+</li>
 </ol>
-<p><img alt="role1" src="/images/2.prerequisite/039-iamrole.png"></p>
+<p><img alt="ECR" src="/images/2.prerequisite/ecr-003.png">
+<img alt="ECR" src="/images/2.prerequisite/ecr-004.png"></p>
 <ol start="4">
-<li>Click <strong>AWS service</strong> and click <strong>EC2</strong>.</li>
-</ol>
+<li>Click on the repository you just created.
 <ul>
-<li>Click <strong>Next: Permissions</strong>.</li>
+<li>Select <strong>View push commands</strong> to see how to push the image to the repository.</li>
 </ul>
-<p><img alt="role1" src="/images/2.prerequisite/40-iamrole.png"></p>
+</li>
+</ol>
+<p><img alt="ECR" src="/images/2.prerequisite/ecr-005.png">
+<img alt="ECR" src="/images/2.prerequisite/ecr-006.png">
+<img alt="ECR" src="/images/2.prerequisite/ecr-007.png"></p>
 <ol start="5">
-<li>In the Search box, enter <strong>AmazonSSMManagedInstanceCore</strong> and press Enter to search for this policy.</li>
+<li>Open Terminal in your source code directory.</li>
 </ol>
 <ul>
-<li>Click the policy <strong>AmazonSSMManagedInstanceCore</strong>.</li>
-<li>Click <strong>Next: Tags.</strong></li>
+<li>First, log in to your repository:</li>
 </ul>
-<p><img alt="createpolicy" src="/images/2.prerequisite/041-iamrole.png"></p>
-<ol start="6">
-<li>Click <strong>Next: Review</strong>.</li>
-<li>Name the Role <strong>SSM-Role</strong> in Role Name</li>
-</ol>
-<ul>
-<li>Click <strong>Create Role</strong> .</li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin &lt;account-id&gt;.dkr.ecr.ap-southeast-1.amazonaws.com
+</span></span></code></pre></div><ul>
+<li>Next, build the image using the following command. For Mac M1 users who want to run the x86_64 architecture, add &ndash;platform linux/amd64:</li>
 </ul>
-<p><img alt="namerole" src="/images/2.prerequisite/042-iamrole.png"></p>
-<p>Next, we will make the connection to the EC2 servers we created with <strong>Session Manager</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build --platform linux/amd64 -t django-serverless-demo -f docker/DockerfileLambda .
+</span></span></code></pre></div><ul>
+<li>Finally, tag the image and push it to the ECR:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker tag django-serverless-demo:latest &lt;acoount-id&gt;.dkr.ecr.ap-southeast-1.amazonaws.com/django-serverless-demo:latest
+</span></span><span style="display:flex;"><span>docker push &lt;account-id&gt;.dkr.ecr.ap-southeast-1.amazonaws.com/django-serverless-demo:latest  
+</span></span></code></pre></div><p><img alt="ECR" src="/images/2.prerequisite/ecr-008.png"></p>
+<p>Next, we will create Lambda &amp; API Gateway.</p>
 
 
 
@@ -869,7 +916,7 @@
 			<a class="nav nav-prev" href="/2-prerequiste/2.1-route53/2.1.2-preparesourcecode/" title="Prepare the Source Code"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-lambda--api-gateway/" title="Lambda &amp; API Gateway" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-lambdaapigateway/" title="Lambda &amp; API Gateway" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -879,19 +926,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1723452425"></script>
-    <script src="/js/perfect-scrollbar.min.js?1723452425"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1723452425"></script>
-    <script src="/js/jquery.sticky.js?1723452425"></script>
-    <script src="/js/featherlight.min.js?1723452425"></script>
-    <script src="/js/highlight.pack.js?1723452425"></script>
+    <script src="/js/clipboard.min.js?1723453848"></script>
+    <script src="/js/perfect-scrollbar.min.js?1723453848"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1723453848"></script>
+    <script src="/js/jquery.sticky.js?1723453848"></script>
+    <script src="/js/featherlight.min.js?1723453848"></script>
+    <script src="/js/highlight.pack.js?1723453848"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1723452425"></script>
-    <script src="/js/learn.js?1723452425"></script>
-    <script src="/js/hugo-learn.js?1723452425"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1723453848"></script>
+    <script src="/js/learn.js?1723453848"></script>
+    <script src="/js/hugo-learn.js?1723453848"></script>
 
-    <link href="/mermaid/mermaid.css?1723452425" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1723452425"></script>
+    <link href="/mermaid/mermaid.css?1723453848" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1723453848"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Lambda :: Building Serverless RestAPI</title>
+    <title>Lambda &amp; API Gateway :: Building Serverless RestAPI</title>
 
     
-    <link href="/css/nucleus.css?1723452425" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1723452425" rel="stylesheet">
-    <link href="/css/hybrid.css?1723452425" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1723452425" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1723452425" rel="stylesheet">
-    <link href="/css/auto-complete.css?1723452425" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1723452425" rel="stylesheet">
-    <link href="/css/theme.css?1723452425" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1723452425" rel="stylesheet">
+    <link href="/css/nucleus.css?1723453848" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1723453848" rel="stylesheet">
+    <link href="/css/hybrid.css?1723453848" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1723453848" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1723453848" rel="stylesheet">
+    <link href="/css/auto-complete.css?1723453848" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1723453848" rel="stylesheet">
+    <link href="/css/theme.css?1723453848" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1723453848" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1723452425" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1723453848" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1723452425"></script>
+    <script src="/js/jquery-3.3.1.min.js?1723453848"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/3-lambda--api-gateway/3.1-lambda/">
+  <body class="" data-url="/3-lambdaapigateway/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1723452425"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1723452425"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1723453848"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1723453848"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/nghiadaulau.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1723452425"></script>
+<script type="text/javascript" src="/js/search.js?1723453848"></script>
 
     
   </div>
@@ -235,13 +235,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-ecr/" title="Create IAM Role" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-ecr/" title="Create ECR, Build Image, and Push Image" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.2-ecr/">
-           <b> 2.2 </b> Create IAM Role
+           <b> 2.2 </b> Create ECR, Build Image, and Push Image
           
             <i class="fas fa-check read-icon"></i>
           
@@ -270,12 +270,12 @@
  
   
     
-    <li data-nav-id="/3-lambda--api-gateway/" title="Lambda &amp; API Gateway" class="dd-item 
-        parent
+    <li data-nav-id="/3-lambdaapigateway/" title="Lambda &amp; API Gateway" class="dd-item 
         
+        active
         
         ">
-      <a href="/3-lambda--api-gateway/">
+      <a href="/3-lambdaapigateway/">
            <b> 3. </b> Lambda &amp; API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -301,12 +301,12 @@
  
   
     
-    <li data-nav-id="/3-lambda--api-gateway/3.1-lambda/" title="Lambda" class="dd-item 
+    <li data-nav-id="/3-lambdaapigateway/3.1-lambda/" title="Lambda" class="dd-item 
         
-        active
+        
         
         ">
-      <a href="/3-lambda--api-gateway/3.1-lambda/">
+      <a href="/3-lambdaapigateway/3.1-lambda/">
            <b> 3.1. </b> Lambda
           
             <i class="fas fa-check read-icon"></i>
@@ -329,12 +329,12 @@
  
   
     
-    <li data-nav-id="/3-lambda--api-gateway/3.2-api-gateway/" title="API Gateway" class="dd-item 
+    <li data-nav-id="/3-lambdaapigateway/3.2-api-gateway/" title="API Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/3-lambda--api-gateway/3.2-api-gateway/">
+      <a href="/3-lambdaapigateway/3.2-api-gateway/">
            <b> 3.2. </b> API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -443,7 +443,7 @@
                   
                     
                     
-                      <option id="en" value="https://nghiadaulau.github.io/3-lambda--api-gateway/3.1-lambda/" selected>English</option>
+                      <option id="en" value="https://nghiadaulau.github.io/3-lambdaapigateway/" selected>English</option>
                     
                   
               
@@ -457,7 +457,7 @@
                   
                     
                     
-                      <option id="vi" value="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.1-lambda/">Tiếng Việt</option>
+                      <option id="vi" value="https://nghiadaulau.github.io/vi/3-lambdaapigateway/">Tiếng Việt</option>
                     
                   
               
@@ -545,13 +545,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>Serverless</a> > <a href='/3-lambda--api-gateway/'>Lambda & API Gateway</a> > Lambda
-          
-        
+            <a href='/'>Serverless</a> > Lambda & API Gateway
           
         
           
@@ -562,7 +556,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#content">Content</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -578,7 +580,7 @@
           
             <h1>
               
-              Lambda
+              Lambda &amp; API Gateway
             </h1>
           
 
@@ -586,36 +588,10 @@
 
 
 
-	<ol>
-<li>Search for <strong>Lambda</strong>. Select Lambda.</li>
-</ol>
-<p><img alt="Lambda" src="/images/3.connect/lambda-001.png"></p>
-<ol start="2">
-<li>On the <strong>Lambda</strong> page, click <strong>Create Function</strong>.</li>
-</ol>
-<p><img alt="Lambda" src="/images/3.connect/lambda-002.png"></p>
-<ol start="3">
-<li>On the <strong>Create Function</strong> page:</li>
-</ol>
-<ul>
-<li>Switch to the <strong>Container Image</strong> tab.</li>
-<li>Enter the function name in the <strong>Function name</strong> field.</li>
-<li>In the <strong>Container Image URI</strong> section, click <strong>Browse Image</strong>.</li>
-</ul>
-<p><img alt="Lambda" src="/images/3.connect/lambda-003.png"></p>
-<ul>
-<li>Select the repository created earlier, &ldquo;django-serverless-demo.&rdquo;</li>
-<li>Tick the appropriate image.</li>
-<li>Click <strong>Select Image</strong> to choose this image.</li>
-</ul>
-<p><img alt="Lambda" src="/images/3.connect/lambda-004.png"></p>
-<ul>
-<li>In the <strong>Architecture</strong> section, select the architecture that matches your image. Since we built x86, I will select x86.</li>
-<li>Click <strong>Create Function</strong> to create the image.</li>
-</ul>
-<p><img alt="Lambda" src="/images/3.connect/lambda-005.png">
-<img alt="Lambda" src="/images/3.connect/lambda-007.png"></p>
-<p>Next, we will create an API Gateway to trigger this Lambda.</p>
+	<p>In this step, we will create a Lambda and an API Gateway to be able to Trigger the newly created Lambda.</p>
+<h3 id="content">Content</h3>
+<p>3.1. <a href="/3-lambdaapigateway/3.1-lambda/">Create Lambda</a> <br>
+3.2. <a href="/3-lambdaapigateway/3.2-api-gateway/">Create API Gateway</a></p>
 
 
 
@@ -775,6 +751,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -791,9 +769,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -850,10 +825,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-lambda--api-gateway/" title="Lambda &amp; API Gateway"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/2-prerequiste/2.2-ecr/" title="Create ECR, Build Image, and Push Image"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-lambda--api-gateway/3.2-api-gateway/" title="API Gateway" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-lambdaapigateway/3.1-lambda/" title="Lambda" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -863,19 +838,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1723452425"></script>
-    <script src="/js/perfect-scrollbar.min.js?1723452425"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1723452425"></script>
-    <script src="/js/jquery.sticky.js?1723452425"></script>
-    <script src="/js/featherlight.min.js?1723452425"></script>
-    <script src="/js/highlight.pack.js?1723452425"></script>
+    <script src="/js/clipboard.min.js?1723453848"></script>
+    <script src="/js/perfect-scrollbar.min.js?1723453848"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1723453848"></script>
+    <script src="/js/jquery.sticky.js?1723453848"></script>
+    <script src="/js/featherlight.min.js?1723453848"></script>
+    <script src="/js/highlight.pack.js?1723453848"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1723452425"></script>
-    <script src="/js/learn.js?1723452425"></script>
-    <script src="/js/hugo-learn.js?1723452425"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1723453848"></script>
+    <script src="/js/learn.js?1723453848"></script>
+    <script src="/js/hugo-learn.js?1723453848"></script>
 
-    <link href="/mermaid/mermaid.css?1723452425" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1723452425"></script>
+    <link href="/mermaid/mermaid.css?1723453848" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1723453848"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

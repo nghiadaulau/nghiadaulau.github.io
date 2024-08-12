@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lambda on Xây Dựng RestAPI Serverless</title>
-    <link>https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.1-lambda/</link>
+    <link>https://nghiadaulau.github.io/vi/3-lambdaapigateway/3.1-lambda/</link>
     <description>Recent content in Lambda on Xây Dựng RestAPI Serverless</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/3.1-lambda/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nghiadaulau.github.io/vi/3-lambdaapigateway/3.1-lambda/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

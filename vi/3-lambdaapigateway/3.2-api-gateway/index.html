@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Lambda &amp; API Gateway :: Xây Dựng RestAPI Serverless</title>
+    <title>API Gateway :: Xây Dựng RestAPI Serverless</title>
 
     
-    <link href="/css/nucleus.css?1723452425" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1723452425" rel="stylesheet">
-    <link href="/css/hybrid.css?1723452425" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1723452425" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1723452425" rel="stylesheet">
-    <link href="/css/auto-complete.css?1723452425" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1723452425" rel="stylesheet">
-    <link href="/css/theme.css?1723452425" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1723452425" rel="stylesheet">
+    <link href="/css/nucleus.css?1723453848" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1723453848" rel="stylesheet">
+    <link href="/css/hybrid.css?1723453848" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1723453848" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1723453848" rel="stylesheet">
+    <link href="/css/auto-complete.css?1723453848" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1723453848" rel="stylesheet">
+    <link href="/css/theme.css?1723453848" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1723453848" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1723452425" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1723453848" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1723452425"></script>
+    <script src="/js/jquery-3.3.1.min.js?1723453848"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/vi/3-lambda--api-gateway/">
+  <body class="" data-url="/vi/3-lambdaapigateway/3.2-api-gateway/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1723452425"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1723452425"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1723453848"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1723453848"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/nghiadaulau.github.io\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1723452425"></script>
+<script type="text/javascript" src="/js/search.js?1723453848"></script>
 
     
   </div>
@@ -270,12 +270,12 @@
  
   
     
-    <li data-nav-id="/vi/3-lambda--api-gateway/" title="Lambda &amp; API Gateway" class="dd-item 
+    <li data-nav-id="/vi/3-lambdaapigateway/" title="Lambda &amp; API Gateway" class="dd-item 
+        parent
         
-        active
         
         ">
-      <a href="/vi/3-lambda--api-gateway/">
+      <a href="/vi/3-lambdaapigateway/">
            <b> 3. </b> Lambda &amp; API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -301,12 +301,12 @@
  
   
     
-    <li data-nav-id="/vi/3-lambda--api-gateway/3.1-lambda/" title="Lambda" class="dd-item 
+    <li data-nav-id="/vi/3-lambdaapigateway/3.1-lambda/" title="Lambda" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-lambda--api-gateway/3.1-lambda/">
+      <a href="/vi/3-lambdaapigateway/3.1-lambda/">
            <b> 3.1. </b> Lambda
           
             <i class="fas fa-check read-icon"></i>
@@ -329,12 +329,12 @@
  
   
     
-    <li data-nav-id="/vi/3-lambda--api-gateway/3.2-api-gateway/" title="API Gateway" class="dd-item 
+    <li data-nav-id="/vi/3-lambdaapigateway/3.2-api-gateway/" title="API Gateway" class="dd-item 
         
-        
+        active
         
         ">
-      <a href="/vi/3-lambda--api-gateway/3.2-api-gateway/">
+      <a href="/vi/3-lambdaapigateway/3.2-api-gateway/">
            <b> 3.2. </b> API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -443,7 +443,7 @@
                   
                     
                     
-                      <option id="en" value="https://nghiadaulau.github.io/3-lambda--api-gateway/">English</option>
+                      <option id="en" value="https://nghiadaulau.github.io/3-lambdaapigateway/3.2-api-gateway/">English</option>
                     
                   
               
@@ -457,7 +457,7 @@
                   
                     
                     
-                      <option id="vi" value="https://nghiadaulau.github.io/vi/3-lambda--api-gateway/" selected>Tiếng Việt</option>
+                      <option id="vi" value="https://nghiadaulau.github.io/vi/3-lambdaapigateway/3.2-api-gateway/" selected>Tiếng Việt</option>
                     
                   
               
@@ -545,7 +545,13 @@
             
           
           
-            <a href='/vi/'>Serverless</a> > Lambda & API Gateway
+            
+            
+          
+          
+            <a href='/vi/'>Serverless</a> > <a href='/vi/3-lambdaapigateway/'>Lambda & API Gateway</a> > API Gateway
+          
+        
           
         
           
@@ -556,15 +562,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#nôi-dung">Nội dung</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -580,7 +578,7 @@
           
             <h1>
               
-              Lambda &amp; API Gateway
+              API Gateway
             </h1>
           
 
@@ -588,10 +586,66 @@
 
 
 
-	<p>Trong bước này, chúng ta sẽ thực hiện tạo Lambda và một API Gateway để có thể Trigger được Lambda vừa mới tạo.</p>
-<h3 id="nôi-dung">Nội dung</h3>
-<p>3.1. <a href="/vi/3-lambda--api-gateway/3.1-lambda/">Tạo Lambda</a> <br>
-3.2. <a href="/vi/3-lambda--api-gateway/3.2-api-gateway/">Tạo API Gateway</a></p>
+	<ol>
+<li>Tìm kiếm <strong>API Gateway</strong>. Chọn API Gateway.</li>
+</ol>
+<p><img alt="API Gateway" src="/images/3.connect/api-gateway-001.png"></p>
+<ol start="2">
+<li>Tại trang <strong>API Gateway</strong>.
+<ul>
+<li>Kéo xuống dưới phần <strong>Choose an API type</strong>.</li>
+<li>Chọn <strong>HTTP API</strong>, nhấn chọn <strong>Build</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="API Gateway" src="/images/3.connect/api-gateway-002.png"></p>
+<ol start="3">
+<li>Tại Step 1: <strong>Create an API</strong>.
+<ul>
+<li>Nhấn chọn <strong>Add integration</strong>.</li>
+<li>Nhấn chọn <strong>Lambda</strong>, chọn Region <strong>ap-southeast-1</strong>, chọn Lambda Function, chọn Version 2.0.</li>
+<li>Tại mục <strong>API name</strong>, nhập tên API name của bạn, sau đó bấm <strong>Next</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="API Gateway" src="/images/3.connect/api-gateway-003.png"></p>
+<ol start="4">
+<li>Tại Step 2 <strong>Configure Routes</strong>
+
+<div class="notices info" ><p>Trong API Gateway, {proxy+} là một tham số đường dẫn đặc biệt được sử dụng khi cấu hình routes để cho phép &ldquo;catch-all&rdquo; hoặc &ldquo;proxy&rdquo; bất kỳ đường dẫn nào sau phần này của URL.</p>
+</div>
+
+<ul>
+<li>Phần <strong>Method</strong>, tiến hành chọn <strong>GET</strong>.</li>
+<li>Phần <strong>Resource Path</strong>, tiến hành nhập <strong>/{proxy+}</strong>.</li>
+<li>Phần <strong>Integration target</strong>, nhấn chọn lambda function.</li>
+<li>Cuối cùng nhấn <strong>Next</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="API Gateway" src="/images/3.connect/api-gateway-004.png"></p>
+<ol start="5">
+<li>Tại Step 3 <strong>Define Stages</strong>.
+<ul>
+<li>Tại phần <strong>Stage Name</strong>, chọn Stage của bạn, ở đây mình chọn stage mặc định là <strong>Default</strong>, cuối cùng là nhấn <strong>Next</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="API Gateway" src="/images/3.connect/api-gateway-005.png"></p>
+<ol start="6">
+<li>Tại Step 4 <strong>Review and Create</strong>.
+<ul>
+<li>Tại phần này bạn review lại coi mình config chuẩn hết chưa.</li>
+<li>Sau khi review thì nhấn <strong>Create</strong></li>
+</ul>
+</li>
+</ol>
+<p><img alt="API Gateway" src="/images/3.connect/api-gateway-006.png"></p>
+<ol start="7">
+<li>Sau khi khởi tạo xong API Gateway, thì ta quay về giao diện Lambda, ta sẽ thấy đã có API Gateway được trigger cho Lambda của mình.</li>
+</ol>
+<p><img alt="Lambda" src="/images/3.connect/lambda-009.png"></p>
+<p>Tiếp theo ta sẽ tới phần cấu hình SSL cho API bằng ACM.</p>
 
 
 
@@ -770,6 +824,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -788,6 +843,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -825,10 +883,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-prerequiste/2.2-ecr/" title="Tạo ECR, tạo Image và đẩy Image"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/3-lambdaapigateway/3.1-lambda/" title="Lambda"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/3-lambda--api-gateway/3.1-lambda/" title="Lambda" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/4-acm/" title="Custom Domain &amp; SSL" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -838,19 +896,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1723452425"></script>
-    <script src="/js/perfect-scrollbar.min.js?1723452425"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1723452425"></script>
-    <script src="/js/jquery.sticky.js?1723452425"></script>
-    <script src="/js/featherlight.min.js?1723452425"></script>
-    <script src="/js/highlight.pack.js?1723452425"></script>
+    <script src="/js/clipboard.min.js?1723453848"></script>
+    <script src="/js/perfect-scrollbar.min.js?1723453848"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1723453848"></script>
+    <script src="/js/jquery.sticky.js?1723453848"></script>
+    <script src="/js/featherlight.min.js?1723453848"></script>
+    <script src="/js/highlight.pack.js?1723453848"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1723452425"></script>
-    <script src="/js/learn.js?1723452425"></script>
-    <script src="/js/hugo-learn.js?1723452425"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1723453848"></script>
+    <script src="/js/learn.js?1723453848"></script>
+    <script src="/js/hugo-learn.js?1723453848"></script>
 
-    <link href="/mermaid/mermaid.css?1723452425" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1723452425"></script>
+    <link href="/mermaid/mermaid.css?1723453848" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1723453848"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
